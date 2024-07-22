@@ -2,6 +2,8 @@ package com.mat.mvc.dao;
 
 import java.util.List;
 
+import com.mat.mvc.vo.ReplyVO;
+
 public interface ReplyDAO {
 	
 	public List<ReplyVO> readReply(int bno) throws Exception;

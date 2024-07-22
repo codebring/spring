@@ -2,7 +2,7 @@ package com.mat.mvc.service;
 
 import java.util.List;
 
-import com.mat.mvc.dao.BoardVO;
+import com.mat.mvc.vo.BoardVO;
 
 public interface BoardService {
 

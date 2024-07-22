@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import com.mat.mvc.vo.MemberVO;
+
 // HandlerInterceptorAdapter  
 public class AdminInterceptor implements HandlerInterceptor {
 

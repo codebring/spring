@@ -5,7 +5,7 @@
 <mapper namespace="com.board.mappers.reply">
 
 	<!-- 댓글 조회 -->
-	<select id="readReply" resultType="com.mat.mvc.dao.ReplyVO">
+	<select id="readReply" resultType="com.mat.mvc.vo.ReplyVO">
 		select
 		rno, content, writer,
 		regDate
@@ -14,7 +14,7 @@
 	</select>
 
 	<!-- 댓글 작성 -->
-	<insert id="replyWrite" parameterType="com.mat.mvc.dao.ReplyVO">
+	<insert id="replyWrite" parameterType="com.mat.mvc.vo.ReplyVO">
 		insert into reply(bno,
 		writer, content)
 		value(#{bno}, #{writer},
@@ -22,7 +22,7 @@
 	</insert>
 
 	<!-- 댓글 수정 -->
-	<update id="replyModify" parameterType="com.mat.mvc.dao.ReplyVO">
+	<update id="replyModify" parameterType="com.mat.mvc.vo.ReplyVO">
 		update reply set
 		writer = #{writer},
 		content = #{content}
@@ -39,8 +39,8 @@
 
 	<!-- 단일 댓글 조회 -->
 	<select id="replySelect"
-		parameterType="com.mat.mvc.dao.ReplyVO"
-		resultType="com.mat.mvc.dao.ReplyVO">
+		parameterType="com.mat.mvc.vo.ReplyVO"
+		resultType="com.mat.mvc.vo.ReplyVO">
 		select
 		rno, bno, writer, content, regDate
 		from reply

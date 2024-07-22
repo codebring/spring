@@ -7,8 +7,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Repository;
 
 import com.mat.mvc.dao.ReplyDAO;
-import com.mat.mvc.dao.ReplyVO;
 import com.mat.mvc.service.ReplyService;
+import com.mat.mvc.vo.ReplyVO;
 
 @Repository
 public class ReplyServiceImpl implements ReplyService {

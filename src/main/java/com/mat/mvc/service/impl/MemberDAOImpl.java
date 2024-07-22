@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.mat.mvc.dao.MemberDAO;
-import com.mat.mvc.dao.MemberVO;
+import com.mat.mvc.vo.MemberVO;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO {

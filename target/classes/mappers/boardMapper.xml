@@ -5,7 +5,7 @@
 <mapper namespace="com.jbb.mappers.board">
 
 <!-- 게시물 목록 -->
-	<select id="list" resultType="com.mat.mvc.dao.BoardVO">
+	<select id="list" resultType="com.mat.mvc.vo.BoardVO">
 		select
 		bno, title, content, writer,
 		regDate, viewCnt
@@ -13,7 +13,7 @@
 	</select>
 
 	<!-- 게시물 작성 -->
-	<insert id="write" parameterType="com.mat.mvc.dao.BoardVO">
+	<insert id="write" parameterType="com.mat.mvc.vo.BoardVO">
 		insert into
 		board(title,
 		content, writer)
@@ -22,7 +22,7 @@
 
 	<!-- 게시물 조회 -->
 	<select id="view" parameterType="int"
-		resultType="com.mat.mvc.dao.BoardVO">
+		resultType="com.mat.mvc.vo.BoardVO">
 		select
 		bno, title, content, writer, regDate, viewCnt
 		from
@@ -32,7 +32,7 @@
 	</select>
 
 	<!-- 게시물 수정 -->
-	<update id="modify" parameterType="com.mat.mvc.dao.BoardVO">
+	<update id="modify" parameterType="com.mat.mvc.vo.BoardVO">
 		update board
 		set
 		title =

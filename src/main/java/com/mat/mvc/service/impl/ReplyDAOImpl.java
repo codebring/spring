@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.mat.mvc.dao.ReplyDAO;
-import com.mat.mvc.dao.ReplyVO;
+import com.mat.mvc.vo.ReplyVO;
 
 @Repository
 public class ReplyDAOImpl implements ReplyDAO {

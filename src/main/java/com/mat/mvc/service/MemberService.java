@@ -2,7 +2,7 @@ package com.mat.mvc.service;
 
 import javax.servlet.http.HttpSession;
 
-import com.mat.mvc.dao.MemberVO;
+import com.mat.mvc.vo.MemberVO;
 
 public interface MemberService {
 

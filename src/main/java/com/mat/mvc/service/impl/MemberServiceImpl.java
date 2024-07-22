@@ -6,8 +6,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 
 import com.mat.mvc.dao.MemberDAO;
-import com.mat.mvc.dao.MemberVO;
 import com.mat.mvc.service.MemberService;
+import com.mat.mvc.vo.MemberVO;
 
 @Service
 public class MemberServiceImpl implements MemberService {
