@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AdminController {
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
-	@RequestMapping(value="/index", method=RequestMethod.GET)
+	//관리자 화면
+	@RequestMapping(value="/index", method = RequestMethod.GET)
 	public void getIndex() throws Exception {
 		logger.info("get Index");
 	}
-
 }

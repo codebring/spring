@@ -3,6 +3,21 @@ package com.mat.mvc.dao;
 import java.util.Date;
 
 public class MemberVO {
+	
+	/*
+    userId      varchar(50)    not null,
+    userPass    varchar(100)   not null,
+    userName    varchar(30)    not null,
+    userPhone    varchar(20)    not null,
+    userAddr1   varchar(20)    null,
+    userAddr2   varchar(50)    null,
+    userAddr3   varchar(50)    null,
+    regiDate    timestamp not null default now(),
+    verify      int          default 0,
+    primary key(userId)
+	
+	 */
+	
 	private String userId;
 	private String userPass;
 	private String userName;
@@ -12,7 +27,6 @@ public class MemberVO {
 	private String userAddr3;
 	private Date regiDate;
 	private int verify;
-	
 	public String getUserId() {
 		return userId;
 	}
@@ -67,6 +81,7 @@ public class MemberVO {
 	public void setVerify(int verify) {
 		this.verify = verify;
 	}
+	
 	
 	
 
