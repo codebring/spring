@@ -64,44 +64,47 @@ textarea#gdsDes { width:400px; height:180px; }
 	</aside>
 		<div id="container_box">
 				<h2>상품등록</h2>
-				<form role="form" method="post" autocomplete="off">
-				
+
+<form role="form" method="post" autocomplete="off">
+
+<input type="hidden" name="gdsNum" value="${goods.gdsNum}" />
+
 <div class="inputArea">   
    <label>1차 분류</label>
    <select class="category1">
     <option value="">전체</option>
-   </select>
-
+   </select>     
    <label>2차 분류</label>
    <select class="category2" name="cateCode">
     <option value="">전체</option>
    </select>
 </div>
-
 <div class="inputArea">
    <label for="gdsName">상품명</label>
-   <input type="text" id="gdsName" name="gdsName" />
+   <input type="text" id="gdsName" name="gdsName" value="${goods.gdsName}"/>
 </div>
-
 <div class="inputArea">
    <label for="gdsPrice">상품가격</label>
-   <input type="text" id="gdsPrice" name="gdsPrice" />
+   <input type="text" id="gdsPrice" name="gdsPrice" value="${goods.gdsPrice}"/>
 </div>
-
 <div class="inputArea">
    <label for="gdsStock">상품수량</label>
-   <input type="text" id="gdsStock" name="gdsStock" />
+   <input type="text" id="gdsStock" name="gdsStock" value="${goods.gdsStock}"/>
 </div>
-
 <div class="inputArea">
    <label for="gdsDes">상품소개</label>
-   <textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>
+   <textarea rows="5" cols="50" id="gdsDes" name="gdsDes">${goods.gdsDes}</textarea>
 </div>
-
 <div class="inputArea">
-   <button type="submit" id="register_Btn" class="btn btn-primary">등록</button>
-</div>
-
+   <button type="submit" id="delete_Btn">삭제</button>
+   <button type="submit" id="back_Btn">취소</button> 
+   
+   <script>
+                   $("#back_Btn").click(function(){
+                    //history.back();
+                   location.href = "/admin/goods/view?n=" + ${goods.gdsNum};});   
+                  </script>  
+</div>     
 </form>
 		</div>
 	</section>
@@ -181,7 +184,43 @@ textarea#gdsDes { width:400px; height:180px; }
 			 });
 			 
 			});
+		
+
+		var select_cateCode = '${goods.cateCode}';
+				var select_cateCodeRef = '${goods.cateCodeRef}';
+				var select_cateName = '${goods.cateName}';
+
+				console.log("select_cateCode = " + select_cateCode);
+				console.log("select_cateCodeRef = " + select_cateCodeRef);
+
+
+				if(select_cateCodeRef != null && select_cateCodeRef != "") {
+					
+					console.log("값이 없으면");
+					
+					$(".category1").val(select_cateCodeRef);
+					$(".category2").val(select_cateCode);
+					$(".category2").children().remove();
+					$(".category2").append("<option value='"
+											+ select_cateCode + "'>" + select_cateName + "</option>");
+
+
+					
+					
+				} else {
+					
+					console.log("값이 있으면");
+					
+					$(".category1").val(select_cateCode);
+					//$(".category2").val(select_cateCode);
+					$(".category2").append("<option value='"
+							+ select_cateCode + "' selected='selected'>전체</option>");
+				}
+
+		
 	</script>
+	
+	
 	
 
 

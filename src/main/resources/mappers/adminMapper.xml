@@ -8,4 +8,39 @@
  select * from goods_category order by cateCode;
 </select>
 
+<insert id="register">
+ insert into tbl_goods (gdsName, cateCode, gdsPrice, gdsStock, gdsDes) 
+ values (#{gdsName}, #{cateCode}, #{gdsPrice}, #{gdsStock}, #{gdsDes})
+</insert>
+
+<select id="goodslist" resultType="com.mat.mvc.vo.GoodsVO">
+ select 
+ gdsNum, gdsName, cateCode, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate 
+ from tbl_goods order by gdsNum desc
+</select>
+
+<select id="goodsView" resultType="com.mat.mvc.vo.GoodsViewVO">
+ select 
+  g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName, gdsPrice, gdsStock, gdsDes, gdsImg, gdsDate
+           from tbl_goods g
+               inner join goods_category c
+                   on g.cateCode = c.cateCode          
+              where g.gdsNum = #{gdsNum}
+</select>
+
+<update id="goodsModify">
+		update tbl_goods
+		set
+		gdsName = #{gdsName}, 
+		cateCode = #{cateCode},
+		gdsPrice = #{gdsPrice}, 
+		gdsStock = #{gdsStock}, 
+		gdsDes = #{gdsDes} 
+		where gdsNum = #{gdsNum}
+	</update>
+	
+<delete id="goodsDelete">
+ delete from tbl_goods where gdsNum = #{gdsNum}
+</delete>	
+
 </mapper>
