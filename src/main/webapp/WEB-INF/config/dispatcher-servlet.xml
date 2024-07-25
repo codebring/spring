@@ -21,6 +21,7 @@
 	<context:component-scan base-package="com.mat.mvc">
 	</context:component-scan>
 	
+	
 	<!-- Ajax 주석문 허가 -->
 	<mvc:annotation-driven/>
 	
@@ -33,5 +34,5 @@
       <ref bean="AdminInterceptor" />
       </mvc:interceptor>
       </mvc:interceptors>
-	
+      
 </beans>

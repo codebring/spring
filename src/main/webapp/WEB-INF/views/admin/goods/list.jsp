@@ -40,6 +40,14 @@ input { width:150px; }
 textarea#gdsDes { width:400px; height:180px; }
 
 #container_box table td { width:100px; }
+
+#container_box table { width:900px; }
+#container_box table th { font-size:20px; font-weight:bold;
+                           text-align:center; padding: 10px; border-bottom:2px solid #666; }
+#container_box table tr:hover { background:#eee; }
+#container_box table td { padding: 10px; text-align:center; }
+#container_box table img {width: 150px; height: auto;}    
+
 </style>
 
  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
@@ -66,7 +74,7 @@ textarea#gdsDes { width:400px; height:180px; }
 				<table>
 					<thead>
 						<tr>
-							<th>번호</th>
+							<th>썸네일</th>
 							<th>이름</th>
 							<th>카테고리</th>
 							<th>가격</th>
@@ -77,17 +85,15 @@ textarea#gdsDes { width:400px; height:180px; }
 					<tbody>
 						<c:forEach items="${list}" var="list">
 							<tr>
-								<td>${list.gdsNum}</td>
-								<td>
-								<a href="/admin/goods/view?n=${list.gdsNum}">${list.gdsName}</a>
+							<td><img src="${list.gdsThumbImg}"></td>
+								<td><a href="/admin/goods/view?n=${list.gdsNum}">${list.gdsName}</a>
 								</td>
-								<td>${list.cateCode}</td>
-								<td>
-								<fmt:formatNumber value="${list.gdsPrice}" pattern="###,###,###"/>
+								<td><%-- ${list.cateCode} --%> ${list.cateName}
+								</td>
+								<td><fmt:formatNumber value="${list.gdsPrice}" pattern="###,###,###"/>
 								</td>
 								<td>${list.gdsStock}</td>
-								<td>
-								<fmt:formatDate value="${list.gdsDate}" pattern="yyyy-MM-dd" />
+								<td><fmt:formatDate value="${list.gdsDate}" pattern="yyyy-MM-dd" />
 								</td>
 							</tr>
 						</c:forEach>

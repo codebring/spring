@@ -28,7 +28,7 @@ public class AdminServicempl implements AdminService {
 	}
 	
 	@Override
-	public List<GoodsVO> goodsList() throws Exception {
+	public List<GoodsViewVO> goodsList() throws Exception {
 		return dao.goodsList();
 	}
 	
